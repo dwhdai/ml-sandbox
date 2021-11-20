@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ml-sandbox"
+name = "mlsandbox"
 version = "0.1.0"
 description = "Implementing algorithms for fun :)"
 authors = ["David Dai <davidwh.dai@gmail.com>"]
@@ -17,6 +17,9 @@ mypy = "^0.910"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[mypy]
+plugins = "numpy.typing.mypy_plugin"
 
 [tool.black]
 line-length = 100

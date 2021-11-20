@@ -1,4 +1,4 @@
-from ml_sandbox.funky import is_funky
+from mlsandbox.funky import is_funky
 
 
 def test_funky():
