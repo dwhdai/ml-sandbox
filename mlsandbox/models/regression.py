@@ -9,11 +9,9 @@ class Regression:
         self,
         iterations: int,
         learning_rate: float,
-        loss,
     ) -> None:
         self.iterations = iterations
         self.learning_rate = learning_rate
-        self.loss = loss
 
     def initialize_weights(self, n: int) -> np.ndarray:
         """Initialize model weights as zeros
@@ -25,39 +23,32 @@ class Regression:
         weights = np.zeros(n)
         return weights
 
-    def fit(self, x, y) -> float:
-        """Fits the model
-        TODO: Implement regularization
+    def fit(self) -> None:
+        """Placeholder method - should be implemented in subclass"""
+        raise NotImplementedError("Subclasses of Regression must implement fit method")
 
-        Returns:
-            float: The model log-likelihood
-        """
-        x = np.insert(x, 0, 1, axis=1)
-        self.weights = self.initialize_weights(x.shape[1])
-        for _ in range(self.iterations):
-            loss = self.loss(x, y, self.weights)
-            grad = self.loss.gradient(x, y, self.weights)
-            self.weights -= self.learning_rate * grad
-        return loss
-
-    def predict(self, x) -> List[float]:
-        """Get predictions from model
-
-        Returns:
-            float: Returns the predictions from the model, matching the dimensions of
-                the input data.
-        """
-
-        y_pred = np.matmul(np.transpose(self.weights), x)
-
-        return y_pred
+    def predict(self) -> None:
+        """Placeholder method - should be implemented in subclass"""
+        raise NotImplementedError("Subclasses of Regression must implement fit method")
 
 
 class LinearRegression(Regression):
     def __init__(self, iterations: int, learning_rate: float) -> None:
-        super().__init__(iterations, learning_rate, MSELoss)
+        super().__init__(iterations, learning_rate)
+
+    def fit(self):
+        pass
+
+    def predict(self):
+        pass
 
 
 class LogisticRegression(Regression):
     def __init__(self, iterations: int, learning_rate: float) -> None:
-        super().__init__(iterations, learning_rate, CrossEntropyLoss)
+        super().__init__(iterations, learning_rate)
+
+    def fit(self):
+        pass
+
+    def predict(self):
+        pass

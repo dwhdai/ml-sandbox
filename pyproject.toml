@@ -13,6 +13,7 @@ pytest = "^5.2"
 pre-commit = "^2.15.0"
 black = "^21.10b0"
 mypy = "^0.910"
+pytest-mock = "^3.6.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -37,3 +38,12 @@ exclude = '''
   | dist
 )/
 '''
+
+[tool.pyright]
+include = ["mlsandbox"]
+exclude = [
+    "**/__pycache__"
+]
+venvPath = "."
+venv = ".venv"
+pythonversion = "3.8"
