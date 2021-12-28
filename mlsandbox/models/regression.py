@@ -1,7 +1,7 @@
 import numpy as np
 from typing import List
 
-from mlsandbox.models.loss import _Loss, MSELoss, CrossEntropyLoss
+from mlsandbox.models.loss import MSELoss, CrossEntropyLoss
 
 
 class Regression:
@@ -45,7 +45,7 @@ class Regression:
 
         Returns:
             float: Returns the predictions from the model, matching the dimensions of
-            the input data.
+                the input data.
         """
 
         y_pred = np.matmul(np.transpose(self.weights), x)

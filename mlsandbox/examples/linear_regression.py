@@ -2,7 +2,7 @@ from mlsandbox.models import LinearRegression
 
 
 def main() -> None:
-    # model = LinearRegression()
+    """Test docstring"""
     pass
 
 

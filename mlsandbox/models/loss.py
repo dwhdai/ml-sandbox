@@ -8,7 +8,10 @@ class _Loss:
     def __str__(self) -> str:
         pass
 
-    def __call__(self, *args: Any, **kwds: Any) -> Any:
+    def __call__():
+        pass
+
+    def gradient():
         pass
 
 
